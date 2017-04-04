@@ -14,6 +14,16 @@ protocol Spell {
 }
 
 struct Fireball: Spell {
-  var spellName: String = "Fireball"
+  var spellName: String = "🔥"
   var baseDamage: Int = 10
+}
+
+struct PickPocket: Spell {
+  var spellName: String = "💸"
+  var baseDamage: Int = 0
+}
+
+struct TimeFreeze: Spell {
+  var spellName: String = "⏳"
+  var baseDamage: Int = 2
 }

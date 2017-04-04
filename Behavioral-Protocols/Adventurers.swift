@@ -15,10 +15,10 @@ protocol Adventurer: CustomStringConvertible {
   var description: String { get }
   
   init()
-//  init(playerName: String, characterName: String)
   func specialSkill() -> Spell
 }
 
+// It is possible to both define the interface and its default implementation in one go! Neat
 extension Adventurer {
   init(playerName: String, characterName: String) {
     self.init()
@@ -26,7 +26,6 @@ extension Adventurer {
     self.characterName = characterName
   }
 }
-
 
 class Rogue: Adventurer {
   var playerLevel: Int = 1
@@ -37,7 +36,7 @@ class Rogue: Adventurer {
     return self.playerName + " The Crafty"
   }
   
-  required init(){ }
+  required init(){}
   
   func specialSkill() -> Spell {
     return Fireball()
@@ -58,5 +57,21 @@ class Mage: Adventurer {
   
   func specialSkill() -> Spell {
     return Fireball()
+  }
+}
+
+class Wizard: Adventurer {
+  var playerName: String = "Eric"
+  var playerLevel: Int = 10
+  var characterName: String = "Eric the Timely"
+  
+  var description: String {
+    return "Magnanimous " + characterName
+  }
+  
+  required init(){}
+  
+  func specialSkill() -> Spell {
+    return TimeFreeze()
   }
 }
